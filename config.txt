@@ -14,6 +14,7 @@
 #和风天气 API - 免费和付费同权限，非商业无限免费，含空气质量、天文气象 https://console.qweather.com/#/apps  https://dev.qweather.com/docs/api/
 #知心天气 API - 免费、轻便、专业，适合天气预报的初级需求
 #彩云天气 API  https://caiyunapp.com/api/weather_intro.html
+#心知天气 https://www.seniverse.com/dashboard https://seniverse.yuque.com/books/share/e52aa43f-8fe9-4ffa-860d-96c0f3cf1c49?#
 # 所在省份
 "country":"广东省",
 # 所在城市
