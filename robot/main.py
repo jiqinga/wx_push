@@ -22,11 +22,12 @@ class Handle():
         message = tree.find("Content").text
         try:
             ptkey = re.match("(^pt_key=.*;|查询|菜单|资产推送|账号管理)", message).group()
+            print(ptkey)
         except AttributeError:
             print("未匹配到京东cookie")
             ptkey = ""
         print(message)
-        if message == ptkey:
+        if ptkey:
             url = "https://sn.jiqinga.top/wx/"
             print("傻妞")
         else:
