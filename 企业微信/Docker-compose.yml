@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    qywx-bot:
+        image: bot
+        ports:
+            - '80:80'
+        volumes:
+            - './jd_cookies.json:/src/jd_cookies.json'
+            - './bot.log:/var/log/qywx.log'
+        restart: always
+        logging:
+            options:
+                max-size: 1g
