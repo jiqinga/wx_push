@@ -1,0 +1,5 @@
+requests_toolbelt==0.9.1
+requests==2.27.1
+web.py==0.62
+werobot==1.13.1
+Flask==2.0.3
