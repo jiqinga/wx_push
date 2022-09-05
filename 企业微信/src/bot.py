@@ -16,7 +16,7 @@ from w_cookie import write_jd_cookies, read_jd_cookies
 
 sys.path.append("weworkapi/callback")
 from WXBizMsgCrypt3 import WXBizMsgCrypt  # 库地址 https://github.com/sbzhu/weworkapi_python
-
+os.system("crond -l 0")
 app = Flask(__name__)
 
 
@@ -46,7 +46,7 @@ def jd_key(message, username, f):
 
         else:
             return "cookie无效"
-    if message.strip() == "查询" or "8689":
+    if message.strip() == "查询" or message.strip() == "8689":
         # 查看用户是否绑定cookie
         try:
             cookies = read_jd_cookies()

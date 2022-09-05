@@ -1,12 +1,13 @@
 version: '3.3'
 services:
     qywx-bot:
-        image: bot
+        image: bot:0.9
         ports:
-            - '80:80'
+            - '30080:80'
         volumes:
             - './jd_cookies.json:/src/jd_cookies.json'
             - './bot.log:/var/log/qywx.log'
+            - './py.cron:/var/spool/cron/crontabs/root'
         restart: always
         logging:
             options:
