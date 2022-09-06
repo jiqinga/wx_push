@@ -1,1 +1,2 @@
-9      7       *       *       *       cd /src && python send_msg.py
+0 */2 * * * cd /src && python3 check_cookie.py
+0 9 * * * cd /src && python3 post_zichan.py
