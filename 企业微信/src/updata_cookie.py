@@ -132,7 +132,14 @@ def show_jd(cookie):
         "data": cookie,
     }
     res = requests.post(url, json=data)
-    return res.text
+    check = 0
+    while check < 3:
+        if "【账号】null" in res.text:
+            print("查询失败")
+            check += 1
+        else:
+            return res.text
+    return "查询异常，已失败重试三次"
 
 
 if __name__ == '__main__':
