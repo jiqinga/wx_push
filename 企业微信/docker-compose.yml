@@ -7,7 +7,6 @@ services:
         volumes:
             - './jd_cookies.json:/src/jd_cookies.json'
             - './bot.log:/var/log/qywx.log'
-            - './py.cron:/var/spool/cron/crontabs/root'
         restart: always
         logging:
             options:
