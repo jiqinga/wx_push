@@ -131,9 +131,9 @@ def show_jd(cookie):
     data = {
         "data": cookie,
     }
-    res = requests.post(url, json=data)
     check = 0
     while check < 3:
+        res = requests.post(url, json=data)
         if "【账号】null" in res.text:
             print("查询失败")
             check += 1
