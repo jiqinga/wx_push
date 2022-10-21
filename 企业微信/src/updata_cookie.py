@@ -89,7 +89,7 @@ def enable_env_cookie(id, token):
 	"""
 	url = "https://ql.jiqinga.top/open/envs/enable"
 	data = '[{}]'.format(id)
-
+	
 	res = requests.put(url, headers=ql_headers(token), data=data)
 	return res.status_code
 
@@ -102,7 +102,7 @@ def update_env_cookie(id, cookie_name, cookie_remarks, token, cookie):
 		"name": cookie_name,
 		"remarks": cookie_remarks,
 		"id": id,
-
+		
 	}
 	res = requests.put(url, headers=ql_headers(token), json=data)
 	print(res.text)
@@ -129,12 +129,12 @@ def run(pt_pin, cookie, username):
 
 def show_jd(cookie):
 	url = "http://192.168.0.4:3100/getChangePro"
-
+	
 	data = {
 		"data": cookie,
 	}
 	check = 0
-	if int(checkCookies(cookie)) == 0:
+	if int(checkCookies(cookie)) != 1:
 		return "%s,cookie已失效" % cookie
 	while check < 3:
 		res = requests.post(url, json=data)
