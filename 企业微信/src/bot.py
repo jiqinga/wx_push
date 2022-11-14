@@ -6,13 +6,17 @@ import sys
 import time
 from xml.dom.minidom import parseString
 
+import flask
+import requests
 from flask import Flask, request
+from rich.console import Console
 
 import send_msg
 from check_cookies import checkCookies
 from updata_cookie import run, show_jd
 from w_cookie import write_jd_cookies, read_jd_cookies
 
+console = Console()
 sys.path.append("weworkapi/callback")
 from WXBizMsgCrypt3 import WXBizMsgCrypt  # 库地址 https://github.com/sbzhu/weworkapi_python
 
@@ -69,7 +73,10 @@ def douban():
 		echo_str = signature(request, 0)
 		return (echo_str)
 	elif request.method == 'POST':
-		echo_str = signature2(request, 0)
+		try:
+			echo_str = signature2(request, 0)
+		except Exception:
+			console.print_exception(extra_lines=6, show_locals=True, suppress=[flask, requests])
 		return (echo_str)
 
 
