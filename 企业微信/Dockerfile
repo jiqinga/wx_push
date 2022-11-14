@@ -4,7 +4,7 @@ ENV TIME_ZONE Asia/Shanghai
 COPY pip.conf  /root/.pip/pip.conf
 COPY py.cron /var/spool/cron/crontabs/root
 RUN set -ex && sed -i 's/dl-cdn.alpinelinux.org\/alpine\/v3.15/mirrors.tuna.tsinghua.edu.cn\/alpine\/v3.15/g' /etc/apk/repositories && \
-    apk update && apk add --no-cache tzdata gcc g++ git && \
+    apk update && apk add --no-cache tzdata gcc g++ git vim && \
     git clone https://hub.njuu.cf/jiqinga/wx_push.git /tmp/qywx && \
     mv /tmp/qywx/企业微信/src /src && rm -rf  /tmp/qywx && \
     cd /src && \
